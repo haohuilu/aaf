@@ -23,33 +23,29 @@ Begin by cleaning and preparing the dataset to ensure accurate and reliable anal
 - **"Calculate the number of cases where weight or height measurements are missing. Impute the missing values in the dataset."**
 
 ### Response
-```
-Both columns have no missing values according to the dataset summary. Each entry in these columns is fully populated across all 306,281 cases. Consequently, imputation is unnecessary for this dataset as there are no missing values for either weight or height.```
+> Both columns have no missing values according to the dataset summary. Each entry in these columns is fully populated across all 306,281 cases. Consequently, imputation is unnecessary for this dataset as there are no missing values for either weight or height.
 
 - **"Identify and flag any outliers in the Z-scores for height-for-age (HAZ), weight-for-age (WAZ), and weight-for-height (WHZ). How would you handle these outliers in the analysis?"**
 
 ### Response
-```
-The analysis identified the following outliers in Z-scores based on the threshold of |Z| > 3, a standard cutoff for anthropometric measurements:
-
-	•	Height-for-Age Z-score (HAZ): 21,395 cases
-	•	Weight-for-Age Z-score (WAZ): 11,267 cases
-	•	Weight-for-Height Z-score (WHZ): 12,121 cases
-
-These cases have been flagged as outliers in the dataset with new columns (HAZ_outlier, WAZ_outlier, WHZ_outlier), where a True value indicates an outlier.
-
-Handling Outliers in Analysis
-
-	1.	Data Cleaning: Outliers may result from data entry errors, especially if they are extreme. For these, setting them to NaN and then imputing or excluding them may be beneficial.
-	2.	Separate Analysis: Perform analyses with and without outliers to observe their impact on results. For policy or practical insights, it’s often useful to consider the dataset without extreme outliers.
-	3.	Robust Methods: Use statistical methods less sensitive to outliers (e.g., median, robust regression) to analyze the data.
-```
+> The analysis identified the following outliers in Z-scores based on the threshold of |Z| > 3, a standard cutoff for anthropometric measurements:
+> 
+> - Height-for-Age Z-score (HAZ): 21,395 cases
+> - Weight-for-Age Z-score (WAZ): 11,267 cases
+> - Weight-for-Height Z-score (WHZ): 12,121 cases
+> 
+> These cases have been flagged as outliers in the dataset with new columns (`HAZ_outlier`, `WAZ_outlier`, `WHZ_outlier`), where a `True` value indicates an outlier.
+> 
+> **Handling Outliers in Analysis**
+> 
+> 1. **Data Cleaning**: Outliers may result from data entry errors, especially if they are extreme. For these, setting them to `NaN` and then imputing or excluding them may be beneficial.
+> 2. **Separate Analysis**: Perform analyses with and without outliers to observe their impact on results. For policy or practical insights, it’s often useful to consider the dataset without extreme outliers.
+> 3. **Robust Methods**: Use statistical methods less sensitive to outliers (e.g., median, robust regression) to analyze the data.
 
 - **"Check for consistency between age_in_days and age_in_months. If inconsistencies are found, correct them."**
 
 ### Response
-```
-No inconsistencies were found between the age_in_days and age_in_months fields in the dataset. The age values appear consistent when calculated and compared within a tolerance of 0.5 months, likely accounting for minor rounding differences.```
+> No inconsistencies were found between the `age_in_days` and `age_in_months` fields in the dataset. The age values appear consistent when calculated and compared within a tolerance of 0.5 months, likely accounting for minor rounding differences.
 
 ---
 
