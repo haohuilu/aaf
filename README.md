@@ -1,174 +1,122 @@
-# AAF AI Assistant for Data Analysis of Child Undernutrition in Indonesia
 
-The **AAF AI Assistant** is designed to help you analyze data related to child undernutrition in Indonesia. This guide provides an overview of how to use the assistant for various data analysis tasks, ranging from data preprocessing to advanced statistical analysis and visualization. The prompts are categorized to make it easier for you to identify the appropriate commands for different stages of your data analysis.
+# AAF AI Assistant for Child Undernutrition Analysis in Indonesia
+
+The **AAF AI Assistant** is designed to assist in analyzing data related to child undernutrition in Indonesia. This guide outlines the prompts and approaches for various stages of data analysis, from initial data preparation to advanced statistical modeling and interpretation. The categories help identify the right tools and commands for each analysis phase.
 
 ## 📊 Data Analysis Categories
 
-1. [Data Preprocessing and Cleaning](#data-preprocessing-and-cleaning)
-2. [Descriptive Statistics](#descriptive-statistics)
-3. [Trend Analysis](#trend-analysis)
-4. [Risk Factor Analysis](#risk-factor-analysis)
-5. [Geographical Analysis](#geographical-analysis)
+1. [Data Cleaning & Preparation](#data-cleaning--preparation)
+2. [Descriptive Analysis](#descriptive-analysis)
+3. [Bivariate Analysis](#bivariate-analysis)
+4. [Multivariate Analysis](#multivariate-analysis)
+5. [Survey Design & Stratified Analysis](#survey-design--stratified-analysis)
 6. [Visualization](#visualization)
-7. [Reporting and Summarization](#reporting-and-summarization)
-8. [Literature Review and Contextual Analysis](#literature-review-and-contextual-analysis)
+7. [Sensitivity Analysis](#sensitivity-analysis)
 
 ---
 
-## 🔄 Data Preprocessing and Cleaning
+## 🔄 Data Cleaning & Preparation
 
-Use these prompts to clean, preprocess, and prepare your dataset for further analysis.
+Begin by cleaning and preparing the dataset to ensure accurate and reliable analysis results.
 
 ### Prompts
-- **"Clean the dataset and handle missing values."**
-- **"Remove outliers from the dataset based on z-scores."**
-- **"Standardize and normalize the dataset for analysis."**
-- **"Create dummy variables for categorical data."**
-- **"Filter data for children aged 0-5 years."**
-- **"Check for duplicate entries and handle them."**
+- **"Calculate the number of cases where weight or height measurements are missing. Impute the missing values in the dataset."**
+- **"Identify and flag any outliers in the Z-scores for height-for-age (HAZ), weight-for-age (WAZ), and weight-for-height (WHZ). How would you handle these outliers in the analysis?"**
+- **"Check for consistency between age_in_days and age_in_months. If inconsistencies are found, correct them."**
 
 ### Example
 ```
-Clean the dataset to handle missing values and remove any outliers. Ensure the data is prepared for further analysis.
+Calculate the number of missing values for height and weight measurements and impute them to prepare the data for further analysis.
 ```
 
 ---
 
-## 📈 Descriptive Statistics
+## 📈 Descriptive Analysis
 
-These prompts will help you generate a summary of the data, providing insights into central tendencies and distributions.
+Generate summaries to understand the basic characteristics of the dataset and the distribution of undernutrition indicators.
 
 ### Prompts
-- **"Provide a summary of the key statistics (mean, median, mode, standard deviation) for child undernutrition indicators."**
-- **"Generate frequency distributions for underweight, stunting, and wasting indicators."**
-- **"Calculate the percentage of underweight children in each region."**
-- **"Display the distribution of child undernutrition by age group."**
+- **"Summarize the distribution of children by Gender, Province, and age_group. What insights can you gather from this summary?"**
+- **"Calculate the prevalence of stunting, wasting, and underweight. Break down the prevalence by Province, Gender, and age_group."**
 
 ### Example
 ```
-Provide a summary of key statistics for the prevalence of stunting among children aged 0-5 years across different regions.
+Summarize the distribution of stunting, wasting, and underweight indicators by gender, province, and age group. Highlight key patterns.
 ```
 
 ---
 
-## 📉 Trend Analysis
+## 📉 Bivariate Analysis
 
-Use these prompts to identify trends over time and assess the progress or changes in child undernutrition rates.
+Explore relationships between different variables to understand potential associations or trends in undernutrition indicators.
 
 ### Prompts
-- **"Analyze the trend of stunting prevalence from 2010 to 2020."**
-- **"Identify any seasonal variations in child undernutrition rates."**
-- **"Compare undernutrition trends between rural and urban areas."**
-- **"Assess the change in wasting rates over the last decade."**
+- **"Investigate whether there is an association between stunting and gender. Are boys more likely to be stunted than girls? Use appropriate statistical tests."**
+- **"Compare the prevalence of underweight across different provinces. Test whether there is a significant difference between provinces."**
+- **"Analyze how the prevalence of wasting varies across different age groups. Use appropriate methods to explore this relationship."**
 
 ### Example
 ```
-Analyze the trend of child stunting prevalence from 2010 to 2020 in urban and rural areas. Highlight any significant changes.
+Analyze whether there is an association between stunting and gender using statistical tests to check if boys are more likely to be stunted than girls.
 ```
 
 ---
 
-## 🧩 Risk Factor Analysis
+## 🧩 Multivariate Analysis
 
-These prompts are useful for identifying potential risk factors associated with child undernutrition.
+Dive deeper into the data by building models to determine predictors for various undernutrition conditions.
 
 ### Prompts
-- **"Identify the correlation between parental education levels and child undernutrition."**
-- **"Analyze the impact of household income on child stunting rates."**
-- **"Examine the association between access to clean water and undernutrition rates."**
-- **"Perform logistic regression to identify risk factors for child wasting."**
+- **"Build a logistic regression model to determine the predictors of stunting. Include Gender, Province, and age_group as independent variables."**
+- **"Conduct a multinomial logistic regression to analyze the co-occurrence of stunting, wasting, and underweight. How do gender and province influence these conditions?"**
 
 ### Example
 ```
-Analyze the impact of parental education levels on the prevalence of stunting among children under five.
+Build a logistic regression model to identify significant predictors of stunting, incorporating gender, province, and age group as variables.
 ```
 
 ---
 
-## 🌍 Geographical Analysis
+## 📊 Survey Design & Stratified Analysis
 
-Explore regional differences and visualize the prevalence of child undernutrition across different provinces or districts.
+Incorporate design variables to account for the survey structure and ensure valid statistical inferences.
 
 ### Prompts
-- **"Map the prevalence of stunting across different provinces in Indonesia."**
-- **"Identify the top 5 regions with the highest rates of child underweight."**
-- **"Analyze geographical disparities in undernutrition rates."**
-- **"Compare urban vs. rural prevalence of wasting."**
+- **"Incorporate STRATA and Primary_Sampling_Unit (PSU) into your analysis. Why is it important to account for these variables, and how would you do it?"**
 
 ### Example
 ```
-Generate a map showing the prevalence of child undernutrition across the different provinces of Indonesia. Highlight the regions with the highest and lowest rates.
+Explain the importance of incorporating STRATA and PSU in the analysis and outline how they would be included in the statistical models.
 ```
 
 ---
 
 ## 📊 Visualization
 
-Create visual representations of your data to communicate findings more effectively.
+Visualize your findings to enhance interpretation and support evidence-based conclusions.
 
 ### Prompts
-- **"Create a line chart showing the trend of stunting prevalence over the last 10 years."**
-- **"Generate a heatmap to show the correlation between different undernutrition indicators."**
-- **"Produce a bar chart comparing undernutrition rates across different age groups."**
-- **"Visualize the distribution of underweight prevalence by region using a boxplot."**
+- **"Create a bar chart or heat map to visualize the provincial distribution of stunting prevalence. What trends do you observe?"**
+- **"Plot the distribution of HAZ, WAZ, and WHZ scores. What can you infer from these distributions about the health status of children in the dataset?"**
 
 ### Example
 ```
-Create a bar chart comparing stunting prevalence across different age groups of children under five years old.
+Generate a heatmap showing stunting prevalence across different provinces in Indonesia and highlight any visible trends.
 ```
 
 ---
 
-## 📝 Reporting and Summarization
+## 🔎 Sensitivity Analysis
 
-Generate summaries, reports, and actionable insights from the analyzed data.
+Test the robustness of your findings by examining how variations in criteria or thresholds impact results.
 
 ### Prompts
-- **"Summarize the key findings of the trend analysis."**
-- **"Generate a report on the risk factors for child undernutrition."**
-- **"Provide actionable recommendations for reducing stunting rates."**
-- **"Draft a research report section on the impact of socioeconomic factors on child undernutrition."**
+- **"Perform a sensitivity analysis by changing the Z-score cutoff for stunting from -2 to -3. How does this change impact the prevalence estimates for stunting?"**
 
 ### Example
 ```
-Summarize the key findings from the analysis of stunting trends in Indonesia, and suggest possible interventions.
+Run a sensitivity analysis by adjusting the stunting Z-score threshold from -2 to -3. Compare the impact on prevalence estimates.
 ```
 
 ---
 
-## 📚 Literature Review and Contextual Analysis
-
-Gather insights from existing studies and integrate them with the analysis to provide a more comprehensive understanding.
-
-### Prompts
-- **"Summarize recent research findings on child undernutrition in Southeast Asia."**
-- **"Identify effective interventions for reducing child undernutrition."**
-- **"Compare Indonesia's child undernutrition rates with neighboring countries."**
-- **"Analyze how economic growth has impacted child nutrition in Indonesia."**
-
-### Example
-```
-Provide a summary of recent research findings on interventions that have been successful in reducing child undernutrition in Southeast Asia.
-```
-
----
-
-## 💡 Best Practices
-
-- Always start with data cleaning to ensure accurate results.
-- Use descriptive statistics to understand the basic characteristics of the dataset.
-- Combine geographical and trend analysis for a comprehensive understanding of regional differences.
-- Use visualizations to communicate your findings effectively.
-- Incorporate literature reviews to contextualize your findings and offer actionable insights.
-
----
-
-## 🔗 Additional Resources
-
-- [Indonesian Health Survey](https://www.bps.go.id/) - Source for obtaining child undernutrition data in Indonesia.
-- [World Bank Data](https://data.worldbank.org/) - For comparing regional data and finding socioeconomic indicators.
-- [WHO Child Growth Standards](https://www.who.int/childgrowth/standards/en/) - Reference for global child growth metrics.
-
----
-
-By following these prompts and guidelines, you can leverage the AAF AI Assistant to gain valuable insights into child undernutrition in Indonesia and support evidence-based policy-making.
