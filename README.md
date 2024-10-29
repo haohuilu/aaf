@@ -21,9 +21,11 @@ Begin by cleaning and preparing the dataset to ensure accurate and reliable anal
 
 ### Prompts
 - **"Calculate the number of cases where weight or height measurements are missing. Impute the missing values in the dataset."**
+
 ### Response
 ```
 Both columns have no missing values according to the dataset summary. Each entry in these columns is fully populated across all 306,281 cases. Consequently, imputation is unnecessary for this dataset as there are no missing values for either weight or height.```
+
 - **"Identify and flag any outliers in the Z-scores for height-for-age (HAZ), weight-for-age (WAZ), and weight-for-height (WHZ). How would you handle these outliers in the analysis?"**
 - **"Check for consistency between age_in_days and age_in_months. If inconsistencies are found, correct them."**
 
